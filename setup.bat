@@ -15,6 +15,8 @@ for /f "usebackq tokens=1,* delims==" %%A in ("config.env") do if "%%A"=="SITE_D
 if "%DB_PASSWORD%"=="" (echo DB_PASSWORD is missing from config.env& pause& exit /b 1)
 if "%DB_PASSWORD%"=="change-this-password" (echo Change DB_PASSWORD in config.env first& pause& exit /b 1)
 if "%SITE_DOMAIN%"=="" set "SITE_DOMAIN=localhost:9000"
+for /f "usebackq tokens=1,* delims==" %%A in ("config.env") do if "%%A"=="DB_PORT" set "DB_PORT=%%B"
+if "%DB_PORT%"=="" set "DB_PORT=5434"
 
 where node >nul 2>&1 || (
   echo Node.js is required. Install it with:
@@ -40,7 +42,7 @@ if not exist hexagon\.env (
   for /f %%A in ('powershell -NoProfile -Command "[guid]::NewGuid().ToString('N')"') do set JWT=%%A
   for /f %%A in ('powershell -NoProfile -Command "[guid]::NewGuid().ToString('N')"') do set EVICT=%%A
   >hexagon\.env echo DEBUG=false
-  >>hexagon\.env echo DATABASE_URL=postgres://postgres:%DB_PASSWORD%@localhost:5432/postgres
+  >>hexagon\.env echo DATABASE_URL=postgres://postgres:%DB_PASSWORD%@localhost:%DB_PORT%/postgres
   >>hexagon\.env echo DATABASE_LOGS=false
   >>hexagon\.env echo BASE_URL=%SITE_DOMAIN%
   >>hexagon\.env echo JWT_SECRET_KEY=!JWT!
@@ -61,7 +63,7 @@ if not exist hexagon\.env (
 rem Find and start the PostgreSQL Windows service if it is stopped.
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-Service -Name 'postgresql*' -ErrorAction SilentlyContinue ^| Where-Object Status -ne 'Running' ^| Start-Service" >nul 2>&1
 set PGPASSWORD=%DB_PASSWORD%
-psql -h localhost -U postgres -d postgres -c "SELECT 1" >nul 2>&1 || (
+psql -h localhost -p %DB_PORT% -U postgres -d postgres -c "SELECT 1" >nul 2>&1 || (
   echo Could not connect to PostgreSQL.
   echo Make sure PostgreSQL is running and its postgres-user password matches config.env.
   pause
