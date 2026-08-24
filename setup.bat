@@ -60,6 +60,9 @@ if not exist hexagon\.env (
   >>hexagon\.env echo DISABLE_RENDER=true
 )
 
+rem Configure free local S3-compatible storage instead of paid Cloudflare R2.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0enable-local-s3.ps1" || exit /b 1
+
 rem Find and start the PostgreSQL Windows service if it is stopped.
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-Service -Name 'postgresql*' -ErrorAction SilentlyContinue ^| Where-Object Status -ne 'Running' ^| Start-Service" >nul 2>&1
 set PGPASSWORD=%DB_PASSWORD%

@@ -23,7 +23,7 @@ notepad config.env
 .\\setup.bat
 ```
 
-The native installer installs dependencies, builds Hexagon, applies the database schema, and starts Node on `127.0.0.1:9000`.
+The native installer installs dependencies, starts a free local MinIO S3-compatible storage service, builds Hexagon, applies the database schema, and starts Node on `127.0.0.1:9000`. No Cloudflare R2 payment method is required. MinIO data is stored under `minio/data`.
 
 ## VPS (Linux)
 
