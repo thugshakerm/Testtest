@@ -14,6 +14,12 @@ if "%DB_PASSWORD%"=="change-this-password" echo Change DB_PASSWORD in config.env
 if "%SITE_DOMAIN%"=="" set "SITE_DOMAIN=localhost:9000"
 where git >nul 2>&1 || (echo Git is required.& pause& exit /b 1)
 where docker >nul 2>&1 || (echo Docker Desktop is required.& pause& exit /b 1)
+docker info >nul 2>&1 || (
+  echo Docker is installed, but the Docker engine is not running.
+  echo Start Docker Desktop and fix its virtualization error before retrying.
+  pause
+  exit /b 1
+)
 if not exist hexagon\.git (
   echo Cloning Hexagon...
   git clone --depth 1 https://github.com/randomyaps/Hexagon.git hexagon || exit /b 1
