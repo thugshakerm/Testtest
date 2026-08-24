@@ -13,6 +13,9 @@ git pull --ff-only
 if errorlevel 1 exit /b 1
 call npm install
 if errorlevel 1 exit /b 1
+rem Keep dependencies compatible with Hexagon's Svelte 4 stack.
+call npm install --save-exact sveltekit-superforms@2.12.4
+if errorlevel 1 exit /b 1
 call npm run build
 if errorlevel 1 exit /b 1
 call npm run push
