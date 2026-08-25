@@ -639,3 +639,17 @@ Key exact frontend sources studied:
 Distinctive interface patterns include a fixed translucent two-tier responsive navbar, a looping `HXGBLUR.webm` signup background, Alfa Slab One logo typography, interactive H-logo “bite” behavior with sound, compact responsive game/catalog cards, hover-only catalog metadata, horizontally scrolling home rows, and semantic theme variables.
 
 The complete asset manifest now includes all **200** tracked Hexagon image, font, audio, and video files, bringing the guide inventory to **2,265 assets** across five sources.
+
+---
+
+## 10. BubbaBlox v2 — a Next.js 2016 reconstruction
+
+Source: [`harryzawg/bubbablox-v2`](https://github.com/harryzawg/bubbablox-v2), archived branch `2021`, inspected commit `6e355d803dd332797ae714b65e72f71c5bd08c2e` dated 2026-08-15. License: AGPL-3.0.
+
+Frontend scope studied is `2016-roblox-main`: Next.js 12, React 17, Bootstrap 5.1, React-JSS, Source Sans Pro, and a large library of 2016 ROBLOX-style assets. A separate Svelte 3/Bootstrap 5 administration UI exists under `admin/`.
+
+Key sources include `styles/globals.css`, `pages/{index,home,games/index,catalog/index}.js`, `pages/users/[userId]/profile.js`, `components/navbar`, `components/navSidebar`, `components/gameCard`, and `components/catalogPageCard`. Distinctive patterns are the compact black global navbar, persistent white account rail, 970px content measure, gray canvas, white shadowed sections, blue links, green actions, square game/catalog imagery, dual Robux/Tickets pricing, and New/Sale/Timer/Limited overlays.
+
+The repository README explicitly warns that the backend and clients are insecure, unoptimized, crash-prone, and unsuitable for deployment. This study covers frontend design only.
+
+The complete asset inventory adds all **9,400** tracked image, font, audio, and video files from BubbaBlox v2, bringing the guide total to **11,665 assets**.
