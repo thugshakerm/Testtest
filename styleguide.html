@@ -664,6 +664,7 @@ td code{font-size:.78rem;color:#a8b6d1}
 </style>
 
 <style>.atlas-tools{display:flex;gap:.5rem;position:sticky;top:58px;z-index:3;padding:.7rem;background:var(--sg-panel);border:1px solid var(--sg-border);border-radius:7px}.atlas-tools input,.atlas-tools select{padding:.5rem;color:var(--sg-text);background:var(--sg-panel-2);border:1px solid var(--sg-border);border-radius:4px}.atlas-tools input{flex:1}.atlas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:.7rem;margin-top:1rem}.atlas-card{padding:.8rem;background:var(--sg-panel-2);border:1px solid var(--sg-border);border-radius:7px}.atlas-card h3{margin:.2rem 0;font-size:.9rem}.atlas-card p{height:3.8em;overflow:hidden;color:var(--sg-muted);font-size:.75rem}.atlas-meta{display:flex;flex-wrap:wrap;gap:.3rem}.atlas-meta span{padding:.2rem .4rem;border-radius:10px;background:var(--sg-panel);font-size:.62rem}.atlas-source{border-left:3px solid #38a169}.atlas-adjacent{border-left:3px solid #cd9701}@media(max-width:560px){.atlas-tools{flex-direction:column}.atlas-grid{grid-template-columns:1fr}}</style>
+<style>.rre-frame-shell{overflow:hidden;border:1px solid var(--sg-border);border-radius:10px;background:#090d14;box-shadow:0 18px 50px #0005}.rre-framebar{display:flex;align-items:center;gap:7px;height:38px;padding:0 12px;background:#121a28;border-bottom:1px solid #253149}.rre-framebar i{width:9px;height:9px;border-radius:50%;background:#ff718b}.rre-framebar i:nth-child(2){background:#eab754}.rre-framebar i:nth-child(3){background:#55d6be}.rre-framebar span{margin-left:8px;color:#8fa0b8;font:11px ui-monospace,monospace}.rre-frame{display:block;width:100%;height:min(78vh,850px);min-height:620px;border:0;background:#090d14}.rre-features{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0}.rre-feature{padding:.8rem;border:1px solid var(--sg-border);border-radius:7px;background:var(--sg-panel-2)}.rre-feature b{display:block;color:var(--sg-text)}.rre-feature small{color:var(--sg-muted)}.rre-asset-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}.rre-asset-stat{padding:1rem;text-align:center;background:var(--sg-panel-2);border:1px solid var(--sg-border);border-radius:7px}.rre-asset-stat strong{display:block;font-size:1.6rem;color:var(--sg-accent)}@media(max-width:800px){.rre-features,.rre-asset-stats{grid-template-columns:repeat(2,1fr)}.rre-frame{height:720px;min-height:500px}}@media(max-width:450px){.rre-features,.rre-asset-stats{grid-template-columns:1fr}.rre-frame{height:650px}}</style>
 </head>
 <body>
 <div class="sg-topbar">
@@ -742,6 +743,10 @@ td code{font-size:.78rem;color:#a8b6d1}
 
   <h4>Complete asset archive</h4>
   <a href="#asset-sheets">All asset sheets</a>
+
+  <h4>Reverse Engineering Wiki</h4>
+  <a href="#rre-wiki">Full wiki interface</a>
+  <a href="#rre-assets">Local asset library</a>
 
   <h4>Creation tools</h4>
   <a href="#ui-forge">UI Forge</a>
@@ -2945,6 +2950,27 @@ setInterval(updateCountdown, 1000);</code></pre></div>
     </div>
   </div>
 </section>
+<!-- RRE WIKI -->
+<section class="sec" id="rre-wiki">
+  <div class="sec-head"><span class="eyebrow">FULL INTERFACE · KNOWLEDGE BASE</span><h2>Roblox Reverse Engineering Wiki</h2><p>A complete alternate interface for <code>Daniel-176/Roblox-Reverse-Engineering-Wiki</code>, integrated directly into this style guide. The preview contains all 134 imported Wiki and Research documents rather than a static mockup.</p></div>
+  <div class="rre-features"><div class="rre-feature"><b>Full-text archive search</b><small>Searches titles, paths, and complete document text.</small></div><div class="rre-feature"><b>Document navigation</b><small>Collection filters, categories, article tree, and per-page TOC.</small></div><div class="rre-feature"><b>Reader tools</b><small>Markdown rendering, copied code blocks, command palette, dark/light themes.</small></div><div class="rre-feature"><b>Responsive interface</b><small>Three-column desktop shell and mobile slide-out navigation.</small></div></div>
+  <div class="rre-frame-shell"><div class="rre-framebar"><i></i><i></i><i></i><span>reverse-engineering-wiki.html · interactive preview</span></div><iframe class="rre-frame" src="reverse-engineering-wiki.html" title="Roblox Reverse Engineering Wiki redesigned interface" loading="lazy"></iframe></div>
+  <div class="callout role"><b>Interface role:</b> this is the research/reference layer beside the visual revival catalog. It converts the source repository's PHP/wiki content model into a searchable client-side documentation reader while preserving original article text and author attribution.</div>
+  <div class="codewrap"><button type="button">Copy</button><pre><code>&lt;iframe
+  src="reverse-engineering-wiki.html"
+  title="Roblox Reverse Engineering Wiki"
+  loading="lazy"
+&gt;&lt;/iframe&gt;
+
+// Standalone implementation includes 134 embedded source documents.
+// Original source: github.com/Daniel-176/Roblox-Reverse-Engineering-Wiki</code></pre></div>
+</section>
+<section class="sec" id="rre-assets">
+  <div class="sec-head"><span class="eyebrow">LOCAL CONTENT-ADDRESSED ARCHIVE</span><h2>Revival image library</h2><p>Every image path from the six deeply studied revival repositories is represented locally under <code>assets/</code>. Exact duplicate binaries are stored once using SHA-256 filenames; <code>assets/manifest.json</code> retains every original repository path.</p></div>
+  <div class="rre-asset-stats"><div class="rre-asset-stat"><strong>10,737</strong><span>original paths</span></div><div class="rre-asset-stat"><strong>5,764</strong><span>unique files</span></div><div class="rre-asset-stat"><strong>2,062</strong><span>website/UI entries</span></div><div class="rre-asset-stat"><strong>8,675</strong><span>client/game entries</span></div></div>
+  <p class="note">Open the <a href="assets/manifest.json">complete JSON manifest</a> or the <a href="assets/README.md">asset archive documentation</a>. Each record contains source revival, repository, branch, original path, local content-addressed path, SHA-256 digest, byte size, and UI/client category.</p>
+</section>
+
 <!-- UI FUSION LAB -->
 <section class="sec" id="ui-forge">
   <div class="sec-head"><span class="eyebrow">TWO-SOURCE UI SYNTHESIS</span><h2>UI Fusion Forge</h2><p>Select two existing interface patterns. The forge extracts their structure and visual DNA, then synthesizes one new hybrid component—not two blocks placed beside each other.</p></div>
