@@ -1,2 +1,1 @@
-import '../styles/landing.css'
 const menu=document.querySelector('#menu'),nav=document.querySelector('#nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));const more=document.querySelector('#show-more'),list=document.querySelector('#revival-list');more?.addEventListener('click',()=>{const expanded=list.classList.toggle('expanded');more.setAttribute('aria-expanded',String(expanded));more.textContent=expanded?'Show fewer revivals':'Show 3 more revivals'})

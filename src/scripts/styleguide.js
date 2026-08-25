@@ -1,4 +1,3 @@
-import '../styles/styleguide.css'
 
 (function () {
   'use strict';

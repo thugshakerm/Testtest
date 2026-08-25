@@ -1,4 +1,3 @@
-import '../styles/viewer.css'
 const $=s=>document.querySelector(s),editor=$('#editor'),highlight=$('#highlight'),lines=$('#lines'),frame=$('#preview');const starter=`<!doctype html>
 <html lang="en">
 <head>
