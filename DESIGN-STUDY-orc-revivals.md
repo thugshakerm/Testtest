@@ -513,58 +513,7 @@ analysis, `partials/language-dropdown.blade.php` for i18n.
 
 ---
 
-## 5. Fobe / Alphaland — Bootstrap danger red as a brand
-
-### Source identity
-
-The additional source is [`gtoriadotnet/fobe-web`](https://github.com/gtoriadotnet/fobe-web), default branch `production`, last source commit `651e01d` on 2022-12-06. The commit subject is **“Rename Finobe to Fobe”** and the repository is listed by the ORC revival archive as the shared **Fobe/Alphaland source**. It has no declared license.
-
-This is a direct PHP page-handler application rather than Laravel/Blade or Vue:
-
-- `globals/pageHandler.php` assembles the document shell, navigation, body, and footer;
-- page bodies live under `html/` (`home/index.php`, `profile/view.php`, `games/`, `catalog/`);
-- Bootstrap 4 is committed under `html/fobe/css/`;
-- `stylesheet.css` is a 2,054-line override layer and `stylesheet-dark.css` is 1,665 lines;
-- repository assets remain under legacy `finobe-*` names even after the Fobe rename.
-
-### Visual language
-
-Fobe promotes Bootstrap's danger palette into its entire identity:
-
-| Role | Value |
-|---|---|
-| primary / active / link | `#dc3545` |
-| hover | `#c82333` |
-| dark chrome | `#343a40` |
-| border | `#dee2e6` |
-| focus halo | `rgba(255, 0, 0, .25)` |
-| informational blue | `#3f7dfa` |
-
-The same red drives links, buttons, active dropdowns, active pills, focus borders, and focus rings. It is visually coherent but semantically risky: a fresh implementation should reserve a separate destructive token rather than making destructive and branded actions indistinguishable.
-
-### Full interface anatomy
-
-**Guest landing:** a fixed, full-viewport background video, fixed black overlay at 50% opacity, and a centered foreground conversion block. The source sizes important copy in `vw`; the style guide improves this with `clamp()` so narrow and very wide screens remain readable.
-
-**Authenticated home:** avatar/username at left, Recently Played as the dominant card, then a narrow News card beside a Feed composer and shout stream. An Online Friends block exists as hidden TODO markup; that should be removed until implemented rather than shipped invisibly.
-
-**Profile:** two equal Bootstrap columns. Identity and Fobe platform badges occupy the left; a game slideshow and friends occupy the right. User-made badges and groups continue as full-width modules below.
-
-**Discovery cards:** custom overflow containers and fixed thumbnail geometry sit on top of Bootstrap. Game cards, catalog cards, currency rows, slideshows, profile badges, and group grids all live in the monolithic override sheet.
-
-### Asset sheet
-
-The style guide links the original repository's wordmarks, vector logo, Alphabux variants, landing/download artwork, recovery illustration, role badges, membership marks, preview images, and seasonal Christmas/Halloween branding. The verified raw base is:
-
-```text
-https://raw.githubusercontent.com/gtoriadotnet/fobe-web/production/html/fobe/cdn/imgs/
-```
-
-The filename history is itself useful research evidence: Fobe/Alphaland's visual system was layered over Finobe-branded assets rather than rebuilt as a clean identity package.
-
----
-
-## 6. Shared design language of the genre
+## 5. Shared design language of the genre
 
 What all three converge on, and where it comes from:
 
@@ -587,7 +536,7 @@ What all three converge on, and where it comes from:
 
 ---
 
-## 7. Frontend-craft ranking
+## 6. Frontend-craft ranking
 
 | | Score | Why |
 |---|---|---|
@@ -601,7 +550,7 @@ inventory intact. For *visual* study it beats the other two; for *engineering* s
 
 ---
 
-## 8. What's worth stealing
+## 7. What's worth stealing
 
 If you're building something in this style:
 
@@ -633,7 +582,7 @@ If you're building something in this style:
 
 ---
 
-## 9. Reproducing this study
+## 8. Reproducing this study
 
 Clones were shallow (`--depth 1`) into `/tmp/orc/`:
 
