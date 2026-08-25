@@ -1,1 +1,1 @@
-const burger=document.querySelector('.burger'),links=document.querySelector('.links');burger?.addEventListener('click',()=>links.classList.toggle('open'))
+const menu=document.querySelector('#menu'),nav=document.querySelector('#nav');menu?.addEventListener('click',()=>nav.classList.toggle('open'))

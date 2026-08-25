@@ -19,9 +19,11 @@ npm run preview
 
 ### Structure
 
-- `styleguide.html` — main style-guide document and interactive laboratories
-- `reverse-engineering-wiki.html` — alternate knowledge-base reader
-- `src/styles/` — page styles
+- `/` (`index.html`) — creator-focused landing page
+- `/toolkit` — local RCC/SOAP workbench and project planner
+- `/styleguide` — main style-guide document and interactive laboratories
+- `/wiki` — alternate knowledge-base reader
+- `src/styles/` — shared page styles
 - `src/scripts/` — application logic and embedded research indexes
 - `assets/images/` — deduplicated local revival images
 - `assets/manifest.json` — provenance and UI/client categorization
