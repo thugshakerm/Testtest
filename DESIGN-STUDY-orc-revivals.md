@@ -615,3 +615,27 @@ in `composer.json` but ships no `LICENSE` file, and its assets are archived capt
 site. `conewasnthere/kapish-web-trunk` has no license at all, which legally means
 all-rights-reserved regardless of the README's tone. Treat this document as design research,
 and check licensing and trademark exposure before reusing any code or asset.
+
+---
+
+## 9. Hexagon — SvelteKit, Tailwind, and semantic themes
+
+Source: [`suush-ii/hexagon-public`](https://github.com/suush-ii/hexagon-public), branch `main`, inspected commit `74a3bd25499b6b42c23c761d5759e8ec74a24251` dated 2025-09-03. No license file or package license is declared.
+
+Hexagon is architecturally newer than the other studied revivals: SvelteKit 2, Svelte 4, TypeScript, Vite 5, Tailwind 3, Bits UI/shadcn-style primitives, Lucide icons, and Drizzle/PostgreSQL. Frontend tokens in `src/app.postcss` use semantic HSL custom properties mapped into Tailwind. Four palettes are present: default dark, `light`, `night`, and `mocha`.
+
+Key exact frontend sources studied:
+
+- `src/app.postcss` and `tailwind.config.ts`
+- `src/components/navbar.svelte`
+- `src/components/games/gameCard.svelte`
+- `src/components/catalog/catalogCard.svelte`
+- `src/routes/(main)/+page.svelte` (signup/application landing)
+- `src/routes/(main)/home/+page.svelte`
+- `src/routes/(main)/games/+page.svelte`
+- `src/routes/(main)/catalog/+page.svelte`
+- `src/routes/(main)/users/[userId]/profile/+page.svelte`
+
+Distinctive interface patterns include a fixed translucent two-tier responsive navbar, a looping `HXGBLUR.webm` signup background, Alfa Slab One logo typography, interactive H-logo “bite” behavior with sound, compact responsive game/catalog cards, hover-only catalog metadata, horizontally scrolling home rows, and semantic theme variables.
+
+The complete asset manifest now includes all **200** tracked Hexagon image, font, audio, and video files, bringing the guide inventory to **2,265 assets** across five sources.
