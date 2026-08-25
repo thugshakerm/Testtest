@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 
-const cleanRoutes = ['/toolkit', '/styleguide', '/wiki']
+const cleanRoutes = ['/toolkit', '/styleguide', '/wiki', '/viewer']
 
 export default defineConfig({
   plugins: [{
@@ -35,7 +35,8 @@ export default defineConfig({
         index: 'index.html',
         styleguide: 'styleguide/index.html',
         wiki: 'wiki/index.html',
-        toolkit: 'toolkit/index.html'
+        toolkit: 'toolkit/index.html',
+        viewer: 'viewer/index.html'
       }
     }
   }

@@ -21,6 +21,7 @@ npm run preview
 
 - `/` (`index.html`) — creator-focused landing page
 - `/toolkit` — local RCC/SOAP workbench and project planner
+- `/viewer` — VS Code-style local HTML editor and live preview
 - `/styleguide` — main style-guide document and interactive laboratories
 - `/wiki` — alternate knowledge-base reader
 - `src/styles/` — shared page styles
